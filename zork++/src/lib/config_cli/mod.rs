@@ -14,9 +14,8 @@ use clap::{Parser, Subcommand, ValueEnum};
 /// assert_eq!(parser.command, Some(Command::Tests));
 ///
 // Create Template Project
-/// let parser = CliArgs::parse_from(["", "-n", "ZeroDayCodeTemplate", "--legacy", "--git", "--compiler", "clang"]);
-/// assert_eq!(parser.new_template, Some(String::from("ZeroDayCodeTemplate")));
-/// assert_eq!(parser.legacy, true);
+/// let parser = CliArgs::parse_from(["", "-n", "--git", "--compiler", "clang"]);
+/// assert_eq!(parser.new_template, true);
 /// assert_eq!(parser.git, true);
 /// assert_eq!(parser.compiler, Some(CppCompiler::CLANG));
 ///
