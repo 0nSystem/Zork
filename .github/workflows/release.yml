@@ -52,6 +52,7 @@ jobs:
 
       - name: Building Zork's exe
         working-directory: ./zork++
+        if: ${{ matrix.os == 'ubuntu-latest' }}
         run: |
           cargo build --release
 
@@ -94,7 +95,7 @@ jobs:
           algorithm: 'RSA-SHA256'
           #extension: '.sig'
           outputFolder: '.\'
-          files: .\zork-installer.exe.sig
+          files: .\zork-installer.exe
 
       - name: Make Zip for Windows
         if: ${{ matrix.os == 'windows-latest' }}
