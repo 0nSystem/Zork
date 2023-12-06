@@ -82,7 +82,7 @@ jobs:
       - name: Dir target release
         if: ${{ matrix.os == 'windows-latest'}}
         run: |
-          dir /s .\zork++\target\release\
+          Get-ChildItem -Recurse .\zork++\target\release\
 
       - name: Building the installer with Inno Setup
         if: ${{ matrix.os == 'windows-latest' }}
