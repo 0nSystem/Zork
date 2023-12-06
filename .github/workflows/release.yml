@@ -78,17 +78,12 @@ jobs:
           #extension: '.sig'
           outputFolder: '.\zork++\target\release\'
           files: .\zork++\target\release\zork.exe
-      
-      - name: Dir target release
-        if: ${{ matrix.os == 'windows-latest'}}
-        run: |
-          Get-ChildItem -Recurse .\zork++\target\release\
 
       - name: Building the installer with Inno Setup
         if: ${{ matrix.os == 'windows-latest' }}
         run: |
           rm .\zork++\target\release\zork.exe
-          rename .\zork++\target\release\zork.exe.sig zork++.exe
+          rename .\zork++\target\release\zork.exe.sig .\zork++\target\release\zork.exe
           "%programfiles(x86)%\Inno Setup 6\iscc.exe" ".\release-config\windows-installer-zork.iss"
         shell: cmd
       
