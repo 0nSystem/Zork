@@ -81,9 +81,8 @@ jobs:
       
       - name: Dir target release
         if: ${{ matrix.os == 'windows-latest'}}
-        working-directory: ./zork++
-        run:
-          dir .\target\release\
+        run: |
+          dir .\zork++\target\release\
 
       - name: Building the installer with Inno Setup
         if: ${{ matrix.os == 'windows-latest' }}
